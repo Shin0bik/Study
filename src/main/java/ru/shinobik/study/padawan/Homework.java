@@ -8,6 +8,7 @@ public class Homework {
         //0,1,2,3...74
         calculateProduct(array);
         justMore(array);
+        everyEvenSumm(array);
     }
     public static void calculateProduct(int[] array) {
         int size = array.length;
@@ -24,7 +25,7 @@ public class Homework {
         System.out.println(product);
     }
 
-//вывести из массива на экран числа больше 150
+//вывести из массива на экран нечётные числа больше 150
 
     public static void justMore(int[] array) {
         int size = array.length;
@@ -42,4 +43,19 @@ public class Homework {
             System.out.println(value);
         }
     }
+//посчитать сумму всех чётных чисел и вывести её на экран,
+    public static void everyEvenSumm(int[] array) {
+        int evalue = 0;
+        int size = array.length;
+        for(int i = 0; i < size; i++){
+            if(array[i] % 2 != 0) {
+                i++;
+            } else {
+                evalue = array[i] + evalue;
+            }
+        }
+        System.out.println(evalue);
+    }
+    //Взять массив ArrayUtil и посчитать среднее арифметическое каждого 3 элемента массива
+    public static void
 }
