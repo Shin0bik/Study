@@ -9,6 +9,7 @@ public class Homework {
         calculateProduct(array);
         justMore(array);
         everyEvenSumm(array);
+        averageEveryThird(array);
     }
     public static void calculateProduct(int[] array) {
         int size = array.length;
@@ -29,18 +30,16 @@ public class Homework {
 
     public static void justMore(int[] array) {
         int size = array.length;
-        int value = 0;
+        int uvalue = 0;
         for(int i = 0; i < size; i++){
             if(array[i] > 150){
                 if (array[i] % 2 == 0) {
                     i++;
                 } else {
-                    value = array[i];
+                    uvalue = array[i];
                 }
-            } else {
-                i++;
             }
-            System.out.println(value);
+            System.out.println(uvalue);
         }
     }
 //посчитать сумму всех чётных чисел и вывести её на экран,
@@ -57,5 +56,14 @@ public class Homework {
         System.out.println(evalue);
     }
     //Взять массив ArrayUtil и посчитать среднее арифметическое каждого 3 элемента массива
-    public static void
+    public static void averageEveryThird(int[] array) {
+        int average = 0;
+        int size = array.length;
+        for(int i = 0; i < size; i++) {
+            int sum = array[i] + array[i++] + array[i+2];
+                average = sum / 3;
+            }System.out.println(average);
+    }
 }
+
+//average = array[0] + array[1] + array[2];  average = array[10] + array[11] + array[12]
