@@ -1,6 +1,8 @@
 package ru.shinobik.study.util;
 
+import java.util.Arrays;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class ArrayUtil {
 
@@ -21,4 +23,9 @@ public class ArrayUtil {
     private static int getRandomInt(int minValue, int maxValue) {
         return random.nextInt(maxValue - minValue) + minValue;
     }
+    public static void printArray(int[] array) {
+        System.out.println("------ARRAY------");
+        System.out.println(Arrays.stream(array).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
+        System.out.println("-----------------");
+        }
 }
