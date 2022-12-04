@@ -4,17 +4,20 @@ import ru.shinobik.study.util.ArrayUtil;
 
 public class Homework {
     public static void main(String[] args) {
-        int[] array = ArrayUtil.getArray(75, 80, 1107);
+        int[] array = ArrayUtil.getArray(7, 4, 200);
         //0,1,2,3...74
         calculateProduct(array);
         justMore(array);
         everyEvenSumm(array);
         averageEveryThird(array);
+        lowestNumber(array);
     }
+
     public static void calculateProduct(int[] array) {
+        ArrayUtil.printArray(array);
         int size = array.length;
         int product = 0;
-        for(int n = 0; n < size; n++) {
+        for (int n = 0; n < size; n++) {
             if (array[n] > 20) {
                 if (product == 0) {
                     product = array[n];
@@ -29,41 +32,46 @@ public class Homework {
 //вывести из массива на экран нечётные числа больше 150
 
     public static void justMore(int[] array) {
+        ArrayUtil.printArray(array);
         int size = array.length;
-        int uvalue = 0;
-        for(int i = 0; i < size; i++){
-            if(array[i] > 150){
-                if (array[i] % 2 == 0) {
-                    i++;
-                } else {
-                    uvalue = array[i];
-                }
+        for (int i = 0; i < size; i++) {
+            if (array[i] > 150 && (array[i] % 2 != 0)) {
+                System.out.println(array[i]);
             }
-            System.out.println(uvalue);
         }
     }
-//посчитать сумму всех чётных чисел и вывести её на экран,
+
+    //посчитать сумму всех чётных чисел и вывести её на экран,
     public static void everyEvenSumm(int[] array) {
-        int evalue = 0;
+        ArrayUtil.printArray(array);
         int size = array.length;
-        for(int i = 0; i < size; i++){
-            if(array[i] % 2 != 0) {
-                i++;
-            } else {
-                evalue = array[i] + evalue;
+        int sum = 0;
+        for (int i = 0; i < size; i++) {
+            if (array[i] % 2 == 0) {
+                sum = sum + array[i];
             }
         }
-        System.out.println(evalue);
+        System.out.println(sum);
     }
+
     //Взять массив ArrayUtil и посчитать среднее арифметическое каждого 3 элемента массива
     public static void averageEveryThird(int[] array) {
-        int average = 0;
+        ArrayUtil.printArray(array);
         int size = array.length;
-        for(int i = 0; i < size; i++) {
-            int sum = array[i] + array[i++] + array[i+2];
-                average = sum / 3;
-            }System.out.println(average);
+        int average = 0;
+        int count = 0;
+        int sum = 0;
+        for (int i = 2; i < size; i = i + 3) {
+            sum = sum + array[i];
+            count++;
+            average = sum / count;
+        }
+        System.out.println(average);
+    }
+
+    //Взять массив и найти в нём самое маленькое число.
+    public static void lowestNumber(int[] array) {
+        ArrayUtil.printArray(array);
+
     }
 }
-
-//average = array[0] + array[1] + array[2];  average = array[10] + array[11] + array[12]
