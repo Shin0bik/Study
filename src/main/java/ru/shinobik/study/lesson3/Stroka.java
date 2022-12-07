@@ -16,9 +16,11 @@ public class Stroka {
         System.out.println(stroka4 == null);
         String substring = stroka2.substring(2, 5);
         System.out.println(substring);
-        stringOut();
-        moreOrLess();
-        wordCounter();
+//        stringOut();
+//        moreOrLess();
+//        wordCounter();
+//        checkString();
+        reversePrint("Задом");
     }
 
 
@@ -32,7 +34,6 @@ public class Stroka {
 
     //на вход даётся строка, на выходе на экран печатается, если строка больше 10 символов то печатается всё, что начинается с 5 символа этой строки,
     public static void moreOrLess(String s) {
-        s.length();
         if (s.length() < 10) {
             System.out.println(s);
         } else {
@@ -43,11 +44,22 @@ public class Stroka {
 
     //На вход даётся строка и распечатать количество слов в этой строке.
     public static void wordCounter(String str) {
-        String[] counter = str.split("\\s\\d\\D",0);
-        System.out.println(counter.length);
+        String[] words = str.split("\\s+", 0);
+        System.out.println(words.length);
     }
+
     //4)На вход даётся 2 строки, нужно сказать входит ли строка "2" в строку "1"
     public static void checkString(String numOne, String numTwo) {
-
+        System.out.println(numOne.contains(numTwo));
     }
+
+    //5)Перевернуть строку, вывести её задом наперёд.
+    public static void reversePrint(String example) {
+        for (int i = 0; i < example.length(); i++) {
+            System.out.print(example.charAt(example.length()-1-i));
+        }
+    }
+
+
 }
+

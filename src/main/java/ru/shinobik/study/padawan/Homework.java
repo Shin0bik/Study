@@ -1,5 +1,6 @@
 package ru.shinobik.study.padawan;
 
+import ru.shinobik.study.lesson4.Cat;
 import ru.shinobik.study.util.ArrayUtil;
 
 public class Homework {
@@ -14,6 +15,9 @@ public class Homework {
         greatestNumber(array);
         secondLowestNumber(array);
         reverseArray(array);
+        Cat vasya = new Cat("Vasya", 5, 4);
+        Cat murzilo = new Cat("Murzilo", 4, 3.5);
+        vasya.play(murzilo);
     }
 
     public static void calculateProduct(int[] array) {
