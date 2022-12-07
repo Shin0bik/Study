@@ -18,6 +18,7 @@ public class Stroka {
         System.out.println(substring);
         stringOut();
         moreOrLess();
+        wordCounter();
     }
 
 
@@ -42,8 +43,11 @@ public class Stroka {
 
     //На вход даётся строка и распечатать количество слов в этой строке.
     public static void wordCounter(String str) {
-        String[] str;
-        str.split(" ", 0);
-        System.out.println(str.length);
+        String[] counter = str.split("\\s\\d\\D",0);
+        System.out.println(counter.length);
+    }
+    //4)На вход даётся 2 строки, нужно сказать входит ли строка "2" в строку "1"
+    public static void checkString(String numOne, String numTwo) {
+
     }
 }
