@@ -1,6 +1,7 @@
 package ru.shinobik.study.lesson3;
 
 import javafx.scene.control.IndexRange;
+import ru.shinobik.study.lesson4.Bmw;
 import ru.shinobik.study.lesson4.Car;
 import ru.shinobik.study.lesson4.Dog;
 import ru.shinobik.study.util.ArrayUtil;
@@ -34,6 +35,7 @@ public class Stroka {
         compareArrays(array1, array1);
         compareArrays(array1, array2);
         compareArrays(array2, array3);
+
 
     }
 
@@ -112,7 +114,7 @@ public class Stroka {
         int oddAverage;
         int counterArraysOdd = 0;
         int sum = 0;
-        for(int i = 0; i < array.lenght; i++){
+        for(int i = 0; i < array.length; i++){
             if (array[i] % 2 != 0){
                 sum = sum + array[i];
             counterArraysOdd++;
@@ -124,13 +126,13 @@ public class Stroka {
 
     //Написать метод, который принимает на вход массив строк и находит там строку с самой маленькой длиной
     public static void shortestString(String[] someString){
-        int shortest = someString[0].length();
-        for (int i = 1; i < someString.lenght; i++){
-            if (shortest < someString[i].length()){
-                shortest = someString[i].length();
+        String shortest = someString[0];
+        for (int i = 1; i < someString.length; i++){
+            if (shortest.length() <= someString[i].length()){
+                shortest = someString[i];
             }
         }
-        System.out.println(someString[shortest]);
+        System.out.println(shortest);
     }
 
     //Написать класс машина с полями: цвет, марка, модель. Написать метод, который принимает на вход массив машин и считает количество машин красного цвета марки bmw
@@ -138,11 +140,13 @@ public class Stroka {
     public static void redBMW(Car[] cars){
         int counter = 0;
         for(int i = 0; i < cars.length; i++){
-            if (cars[i].equals(Car carColor == "red") && cars[i].equals(Car carBrand == "BMW")){
+            if (cars[i].getCarColor().equals("red") && cars[i].getCarBrand().equals("BMW")){
                 counter++;
             }
         }
         System.out.println(counter);
+    Bmw beha = new Bmw();
     }
+
 }
 
