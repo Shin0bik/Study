@@ -1,10 +1,14 @@
 package ru.shinobik.study.padawan;
 
 import ru.shinobik.study.lesson4.Cat;
+import ru.shinobik.study.lesson4.Dog;
 import ru.shinobik.study.util.ArrayUtil;
 
 public class Homework {
     public static void main(String[] args) {
+        String string = new String("Что-нибудь.");
+        String string1 = "Чтонибудь";
+
         int[] array = ArrayUtil.getArray(7, 4, 200);
         //0,1,2,3...74
         calculateProduct(array);
@@ -18,6 +22,7 @@ public class Homework {
         Cat vasya = new Cat("Vasya", 5, 4);
         Cat murzilo = new Cat("Murzilo", 4, 3.5);
         vasya.play(murzilo);
+        Cat barsik = new Cat();
     }
 
     public static void calculateProduct(int[] array) {
@@ -61,7 +66,7 @@ public class Homework {
     //Взять массив ArrayUtil и посчитать среднее арифметическое каждого 3 элемента массива
     public static void averageEveryThird(int[] array) {
         ArrayUtil.printArray(array);
-        int average = 0;
+        int average;
         int count = 0;
         int sum = 0;
         for (int i = 2; i < array.length; i = i + 3) {
@@ -120,6 +125,7 @@ public class Homework {
             System.out.println(array[i]);
         }
     }
+
 
 
 }

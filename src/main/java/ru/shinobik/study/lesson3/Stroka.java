@@ -1,6 +1,11 @@
 package ru.shinobik.study.lesson3;
 
 import javafx.scene.control.IndexRange;
+import ru.shinobik.study.lesson4.Car;
+import ru.shinobik.study.lesson4.Dog;
+import ru.shinobik.study.util.ArrayUtil;
+
+import java.util.Arrays;
 
 public class Stroka {
     public static void main(String[] args) {
@@ -16,11 +21,20 @@ public class Stroka {
         System.out.println(stroka4 == null);
         String substring = stroka2.substring(2, 5);
         System.out.println(substring);
-//        stringOut();
-//        moreOrLess();
-//        wordCounter();
-//        checkString();
+        stringOut("Печенюшки", 5);
+        moreOrLess("Некая строка, для примера");
+        wordCounter("Триста пиров мне в раздачу");
+        checkString("Lovestospooch", "spooch");
         reversePrint("Задом");
+        squareOfTheNumber(6);
+        factorial(5);
+        int[] array1 = ArrayUtil.getArray(5,1,10);
+        int[] array2 = ArrayUtil.getArray(5,4,12);
+        int[] array3 = ArrayUtil.getArray(8,1,10);
+        compareArrays(array1, array1);
+        compareArrays(array1, array2);
+        compareArrays(array2, array3);
+
     }
 
 
@@ -56,10 +70,79 @@ public class Stroka {
     //5)Перевернуть строку, вывести её задом наперёд.
     public static void reversePrint(String example) {
         for (int i = 0; i < example.length(); i++) {
-            System.out.print(example.charAt(example.length()-1-i));
+            System.out.print(example.charAt(example.length() - 1 - i));
         }
     }
 
+    // Написать метод, создающий массив квадратов чисел от 1 до N (включительно). Например: N = 5, тогда array = {1, 4, 9, 16, 25}
+    public static void squareOfTheNumber(int number) {
+        int[] squareArray = new int[number];
+        for (int i = 1; i <= number; i++) {
+            squareArray[i - 1] = i * i;
+        }
+        String squareArrays = Arrays.toString(squareArray);
+        System.out.println(squareArrays);
+    }
 
+    // Написать метод, считающий факториал N. (Факториал это произведение всех целых от 1 до N)
+    public static void factorial(int n) {
+        int factorial = 1;
+        for (int i = 1; i <= n; i++) {
+            factorial = i * factorial;
+        }
+        System.out.println(factorial);
+    }
+
+    //Написать метод, который определяет, идентичны ли два массива (по наполнению, т.е. равен ли первый элемент одного массива первому элементу другого и т.д.)
+    public static void compareArrays(int arrayOne[], int arrayTwo[]) {
+        boolean equal = arrayOne.length == arrayTwo.length;
+        if (equal) {
+            for (int i = 0; i < arrayOne.length; i++) {
+                if (arrayOne[i] != arrayTwo[i]) {
+                    equal = false;
+                    break;
+                }
+            }
+        }
+        System.out.println(equal);
+    }
+
+    //Написать метод, который посчитает среднее арифметическое всех нечетных чисел в массиве
+    public static void oddAverage(int[] array){
+        int oddAverage;
+        int counterArraysOdd = 0;
+        int sum = 0;
+        for(int i = 0; i < array.lenght; i++){
+            if (array[i] % 2 != 0){
+                sum = sum + array[i];
+            counterArraysOdd++;
+            }
+        }
+        oddAverage = sum / counterArraysOdd;
+        System.out.println(oddAverage);
+    }
+
+    //Написать метод, который принимает на вход массив строк и находит там строку с самой маленькой длиной
+    public static void shortestString(String[] someString){
+        int shortest = someString[0].length();
+        for (int i = 1; i < someString.lenght; i++){
+            if (shortest < someString[i].length()){
+                shortest = someString[i].length();
+            }
+        }
+        System.out.println(someString[shortest]);
+    }
+
+    //Написать класс машина с полями: цвет, марка, модель. Написать метод, который принимает на вход массив машин и считает количество машин красного цвета марки bmw
+
+    public static void redBMW(Car[] cars){
+        int counter = 0;
+        for(int i = 0; i < cars.length; i++){
+            if (cars[i].equals(Car carColor == "red") && cars[i].equals(Car carBrand == "BMW")){
+                counter++;
+            }
+        }
+        System.out.println(counter);
+    }
 }
 
